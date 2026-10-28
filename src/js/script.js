@@ -149,7 +149,7 @@ function iniciarSistema() {
   resumo = resumo + "Safra mais antiga: " + nomeMaisAntigo + " (" + safraMaisAntiga + ")";
 
   console.log(resumo);
-  alert(resumo);git add src/js/script.js
+  alert(resumo);
 }
 
 // ---------- chama o sistema pela função ----------
