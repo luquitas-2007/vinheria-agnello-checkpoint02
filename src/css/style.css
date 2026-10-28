@@ -1,3 +1,35 @@
+/* ===== Reset e base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f7f1ea;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  background: linear-gradient(135deg, #5b0f1f, #8c1c32);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
 /* ===== Conteúdo ===== */
 main {
   max-width: 800px;
@@ -6,7 +38,7 @@ main {
 }
 
 .card {
-  background: #fff;
+  background: #ffffff;
   border-left: 6px solid #8c1c32;
   border-radius: 8px;
   padding: 20px 24px;
@@ -14,37 +46,25 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.card h2 { color: #5b0f1f; margin-bottom: 10px; }
-.card ol { margin-left: 20px; }
-
-code {
-  background: #f0e6dc;
-  padding: 2px 6px;
-  border-radius: 4px;
+.card h2 {
+  color: #5b0f1f;
+  margin-bottom: 10px;
 }
 
-/* ===== Botão ===== */
-button {
-  background: #8c1c32;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
+.card ol {
+  margin-left: 20px;
 }
-
-button:hover { background: #5b0f1f; }
 
 /* ===== Rodapé ===== */
 footer {
   text-align: center;
   padding: 20px;
-  color: #666;
+  color: #666666;
 }
 
 /* ===== Responsividade ===== */
 @media (max-width: 600px) {
-  header h1 { font-size: 1.8rem; }
+  header h1 {
+    font-size: 1.8rem;
+  }
 }
