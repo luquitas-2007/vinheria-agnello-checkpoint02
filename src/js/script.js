@@ -54,3 +54,20 @@ function classificarVinho(safra) {
     return "Antigo";
   }
 }
+
+function exibirVinho(numero, nome, tipo, safra, quantidade) {
+  var texto = "Vinho " + numero + "\n";
+  texto = texto + "Nome: " + nome + "\n";
+  texto = texto + "Tipo: " + tipo + "\n";
+  texto = texto + "Safra: " + safra + " (" + classificarVinho(safra) + ")\n";
+  texto = texto + "Quantidade: " + quantidade + "\n";
+
+  if (estoqueBaixo(quantidade)) {
+    texto = texto + "⚠️ ESTOQUE BAIXO!";
+  } else {
+    texto = texto + "Estoque ok";
+  }
+
+  console.log(texto);
+  alert(texto);
+}
