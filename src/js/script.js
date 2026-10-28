@@ -92,6 +92,9 @@ function iniciarSistema() {
 
   var cadastros = 0;      
   var continuar = true;   
+  var totalEstoqueBaixo = 0;   
+  var nomeMaisAntigo = "";
+  var safraMaisAntiga = 0;
 
   while (continuar === true && cadastros < LIMITE_VINHOS) {
     var nome = lerTexto("Nome do vinho:");
@@ -114,6 +117,14 @@ function iniciarSistema() {
     }
 
     exibirVinho(cadastros, nome, tipo, safra, quant);
+    
+    if (estoqueBaixo(quant)) {
+      totalEstoqueBaixo = totalEstoqueBaixo + 1;
+    }
+    if (cadastros === 1 || safra < safraMaisAntiga) {
+      safraMaisAntiga = safra;
+      nomeMaisAntigo = nome;
+    }
 
     if (cadastros < LIMITE_VINHOS) {
       continuar = perguntarContinuar();
