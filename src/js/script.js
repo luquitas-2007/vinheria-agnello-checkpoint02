@@ -83,6 +83,10 @@ function perguntarContinuar() {
   return resposta === "s";
 }
 
+function linhaResumo(numero, nome, tipo, safra, quantidade) {
+  return numero + ") " + nome + " - " + tipo + " - " + safra + " - " + quantidade + " un.\n";
+}
+
 function iniciarSistema() {
   var nome1 = "", tipo1 = "", safra1 = 0, quant1 = 0;
   var nome2 = "", tipo2 = "", safra2 = 0, quant2 = 0;
@@ -117,7 +121,7 @@ function iniciarSistema() {
     }
 
     exibirVinho(cadastros, nome, tipo, safra, quant);
-    
+
     if (estoqueBaixo(quant)) {
       totalEstoqueBaixo = totalEstoqueBaixo + 1;
     }
@@ -132,6 +136,20 @@ function iniciarSistema() {
       alert("Limite de " + LIMITE_VINHOS + " vinhos atingido.");
     }
   }
+    var lista = "";
+  if (cadastros >= 1) { lista = lista + linhaResumo(1, nome1, tipo1, safra1, quant1); }
+  if (cadastros >= 2) { lista = lista + linhaResumo(2, nome2, tipo2, safra2, quant2); }
+  if (cadastros >= 3) { lista = lista + linhaResumo(3, nome3, tipo3, safra3, quant3); }
+  if (cadastros >= 4) { lista = lista + linhaResumo(4, nome4, tipo4, safra4, quant4); }
+  if (cadastros >= 5) { lista = lista + linhaResumo(5, nome5, tipo5, safra5, quant5); }
+
+  var resumo = "RESUMO FINAL\n\n" + lista + "\n";
+  resumo = resumo + "Cadastros feitos: " + cadastros + "\n";
+  resumo = resumo + "Vinhos com estoque baixo: " + totalEstoqueBaixo + "\n";
+  resumo = resumo + "Safra mais antiga: " + nomeMaisAntigo + " (" + safraMaisAntiga + ")";
+
+  console.log(resumo);
+  alert(resumo);git add src/js/script.js
 }
 
 // ---------- chama o sistema pela função ----------
