@@ -39,3 +39,18 @@ function lerTipo() {
 
   return tipo;
 }
+function estoqueBaixo(quantidade) {
+  return quantidade < ESTOQUE_MINIMO;
+}
+
+function classificarVinho(safra) {
+  var idade = ANO_ATUAL - safra;
+
+  if (idade <= 5) {
+    return "Jovem";
+  } else if (idade <= 15) {
+    return "Amadurecido";
+  } else {
+    return "Antigo";
+  }
+}
